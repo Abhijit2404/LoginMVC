@@ -1,0 +1,81 @@
+@model LoginMVC.Models.UserInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Phynd | Login</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        .container{
+            padding-top: 10px;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("LoginUser", "Login", FormMethod.Get))
+        {
+            <table>
+                <tr>
+                    <h2>LOGIN</h2>
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Email)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.Email)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Email)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td>
+                    <td>@Html.EditorFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="name" value="Login" />
+                        <input type="reset" name="name" value="Clear" />
+                    </td>
+                </tr>
+
+            </table>
+        }
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

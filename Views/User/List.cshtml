@@ -1,0 +1,48 @@
+@model IEnumerable<LoginMVC.Models.User>
+@{
+    ViewData["Title"] = "List";
+}
+
+<h3>List</h3>
+<p style="text-align:end">
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.UserHospitalId)
+            </th> *@
+        </tr>
+    </thead>
+    
+    <tbody>
+        @if(Model != null)
+        {
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    @* <td>
+                        @Html.DisplayFor(modelItem => item.UserHospitalId)
+                    </td> *@
+                    <td>
+                        @Html.ActionLink("Delete","Delete",new{});
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
