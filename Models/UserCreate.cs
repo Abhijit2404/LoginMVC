@@ -12,7 +12,5 @@ namespace LoginMVC.Models
         [DataType(DataType.Password)] 
         public string Password { get; set; }
         public int UserHospitalId { get; set; }
-        public DateTime CreatedOn { get; set; }
-        public DateTime ModifiedOn { get; set; }
     }
 }

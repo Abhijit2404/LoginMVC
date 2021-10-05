@@ -1,4 +1,3 @@
-using LoginMVC.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +27,6 @@ namespace LoginMVC
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllersWithViews();
-            services.AddScoped<IUserService, UserService>();
             services.AddSession();
             services.AddHttpClient();
 

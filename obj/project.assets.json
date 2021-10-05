@@ -5619,11 +5619,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
+      "projectUniqueName": "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
       "projectName": "LoginMVC",
-      "projectPath": "c:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
+      "projectPath": "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
       "packagesPath": "C:\\Users\\abhijit.shinde\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\abhijit.shinde\\LoginMVC\\obj\\",
+      "outputPath": "C:\\Users\\abhijit.shinde\\LoginMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5641,6 +5641,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -5652,6 +5653,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
@@ -5692,7 +5694,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.412\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

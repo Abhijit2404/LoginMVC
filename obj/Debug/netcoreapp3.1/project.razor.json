@@ -14412,8 +14412,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\abhijit.shinde\\LoginMVC\\Views\\User\\List.cshtml",
-      "TargetPath": "Views\\User\\List.cshtml",
+      "FilePath": "c:\\Users\\abhijit.shinde\\LoginMVC\\Views\\User\\Index.cshtml",
+      "TargetPath": "Views\\User\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

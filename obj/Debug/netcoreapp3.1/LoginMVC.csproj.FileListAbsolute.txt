@@ -1,6 +1,5 @@
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\LoginMVC.exe
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\LoginMVC.deps.json
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\LoginMVC.runtimeconfig.json
@@ -21,7 +20,6 @@ C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Pr
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\abhijit.shinde\LoginMVC\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.csprojAssemblyReference.cache
 C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.AssemblyInfoInputs.cache
 C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.AssemblyInfo.cs
 C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.csproj.CoreCompileInputs.cache
@@ -47,5 +45,8 @@ C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\staticwebassets\LoginMV
 C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.dll
 C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.pdb
 C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.genruntimeconfig.cache
-C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\Razor\Views\User\List.cshtml.g.cs
 C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
+C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.csproj.AssemblyReference.cache
+C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\LoginMVC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\scopedcss\bundle\LoginMVC.styles.css
+C:\Users\abhijit.shinde\LoginMVC\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
