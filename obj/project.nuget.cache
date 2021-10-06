@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TSvZOLNzL7Ngu7eoQNMzXOxXXTHIEIIiiHBVFl2UMYKp59eUfSzO1HVD0dSiPQD1myMxKFIrjg8nqNKgVID2LA==",
+  "dgSpecHash": "keh7/ce2Jlpi4uGkYa9wgupx07KF6EVWzfI6ndS3J0k3jSpxQBdJ5AzPkNHpGDdWDkvON3NOLkrgDcBnyJHNqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\abhijit.shinde\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\abhijit.shinde\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\abhijit.shinde\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.2.0\\microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512",
     "C:\\Users\\abhijit.shinde\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",
