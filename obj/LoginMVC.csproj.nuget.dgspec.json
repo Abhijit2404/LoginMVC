@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj": {}
+    "c:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj": {
+    "c:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
+        "projectUniqueName": "c:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
         "projectName": "LoginMVC",
-        "projectPath": "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
+        "projectPath": "c:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
         "packagesPath": "C:\\Users\\abhijit.shinde\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\abhijit.shinde\\LoginMVC\\obj\\",
+        "outputPath": "c:\\Users\\abhijit.shinde\\LoginMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

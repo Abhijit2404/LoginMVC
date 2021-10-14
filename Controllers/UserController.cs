@@ -39,7 +39,7 @@ namespace LoginMVC.Controllers
             {
                 client.BaseAddress = new Uri("https://localhost:5001");
 
-                var deleteTask = client.DeleteAsync("users/Id?Id=" + Id.ToString());
+                var deleteTask = client.DeleteAsync("users?Id=" + Id.ToString());
 
                 var result = deleteTask.Result;
                 if (result.IsSuccessStatusCode)

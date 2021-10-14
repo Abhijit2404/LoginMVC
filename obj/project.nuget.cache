@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "keh7/ce2Jlpi4uGkYa9wgupx07KF6EVWzfI6ndS3J0k3jSpxQBdJ5AzPkNHpGDdWDkvON3NOLkrgDcBnyJHNqQ==",
+  "dgSpecHash": "pjRdY9VyhCgZUu+v8gUiWAutAco67+MyucSY7QfWV70OdUCNjf/h1M21nVe68iOLnBuPY0rd5LCj/Jao27/uVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
+  "projectFilePath": "c:\\Users\\abhijit.shinde\\LoginMVC\\LoginMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abhijit.shinde\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\abhijit.shinde\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

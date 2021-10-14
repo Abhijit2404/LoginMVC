@@ -33,8 +33,6 @@ namespace LoginMVC.Controllers
         {
             return View();
         }
-
-        [HttpGet]
         public async Task<ActionResult> LoginUser(UserInfo user)
         {
             HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8);
@@ -50,7 +48,7 @@ namespace LoginMVC.Controllers
             var result = await responseMessage.Content.ReadAsStringAsync();
 
             Token resultfinal = JsonConvert.DeserializeObject<Token>(result);
-            // HttpContext.Session.SetString("token", resultfinal.ToString());
+            HttpContext.Session.SetString("token", resultfinal.tokenString);
 
             //Cookies
             var claims = new List<Claim>
