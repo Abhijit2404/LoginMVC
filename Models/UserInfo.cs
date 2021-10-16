@@ -8,7 +8,6 @@ namespace LoginMVC.Models
         public string Email { get; set; }
         [DataType(DataType.Password)] 
         public string Password { get; set; }
-        public string Error { get; set; }
 
     }
 }

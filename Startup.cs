@@ -1,10 +1,8 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 
 namespace LoginMVC
@@ -22,13 +20,11 @@ namespace LoginMVC
         public void ConfigureServices(IServiceCollection services)
         {
             
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie();
-            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
             services.AddControllersWithViews();
-            services.AddSession();
-            services.AddHttpClient();
+            services.AddSession(x =>
+            {
+                x.IdleTimeout = TimeSpan.FromMinutes(60);
+            });
 
         }
 
@@ -48,10 +44,11 @@ namespace LoginMVC
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseSession();
             app.UseRouting();
+            
+            app.UseSession();
 
-            app.UseAuthentication();
+            // app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

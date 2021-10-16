@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using LoginMVC.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace LoginMVC.Controllers
 {
@@ -18,11 +22,14 @@ namespace LoginMVC.Controllers
         [HttpPost]
         public IActionResult Create(UserCreate user)
         {
-                using(var client = new HttpClient())
+            var accessToken = HttpContext.Session.GetString("Token");
+
+            using(var client = new HttpClient())
             {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                 client.BaseAddress = new Uri("https://localhost:5001");
-                var postjob = client.PostAsJsonAsync<UserCreate>("users",user);
-                postjob.Wait();
+                var stringContent = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8,"application/json");
+                var postjob = client.PostAsync("users",stringContent);
 
                 var result = postjob.Result;
                 if(result.IsSuccessStatusCode){
@@ -35,8 +42,11 @@ namespace LoginMVC.Controllers
 
         public ActionResult Delete(int Id)
         {
+            var accessToken = HttpContext.Session.GetString("Token");
             using (var client = new HttpClient())
             {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
                 client.BaseAddress = new Uri("https://localhost:5001");
 
                 var deleteTask = client.DeleteAsync("users?Id=" + Id.ToString());
@@ -53,12 +63,13 @@ namespace LoginMVC.Controllers
 
        public IActionResult Index(string search)
         {
+            var accessToken = HttpContext.Session.GetString("Token");
             IEnumerable<User> obj = null;
             HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             client.BaseAddress = new Uri("https://localhost:5001");
 
             var apicall = client.GetAsync("users/func?Search=" + search);
-            //apicall.Wait();
 
             var read = apicall.Result;
             if(read.IsSuccessStatusCode)

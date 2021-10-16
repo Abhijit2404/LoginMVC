@@ -1,9 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\abhijit.shinde\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\abhijit.shinde\\.nuget\\packages",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-    ]
-  }
-}
