@@ -23,7 +23,10 @@ namespace LoginMVC
             services.AddControllersWithViews();
             services.AddSession(x =>
             {
-                x.IdleTimeout = TimeSpan.FromMinutes(60);
+                x.Cookie.Name = "Phynd.Session";
+                x.IdleTimeout = TimeSpan.FromMinutes(2);
+                x.Cookie.HttpOnly = true;
+                x.Cookie.IsEssential = true;
             });
 
         }
@@ -48,7 +51,7 @@ namespace LoginMVC
             
             app.UseSession();
 
-            // app.UseAuthentication();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -13,7 +13,7 @@
 </center>
 
 <p style="text-align:end">
-    <a class="btn btn-success" asp-action="Create"><i class="fa fa-plus" aria-hidden="true"></i>Create User</a>
+    <a class="btn btn-success" asp-action="Create">Create User</a>
 </p>
 
 <table class="table">
@@ -34,7 +34,6 @@
         </tr>
     </thead>
     <tbody>
-
          @if(Model != null)
          {
              @foreach (var item in Model)
@@ -55,6 +54,5 @@
                 </tr>
             }
          }
-
     </tbody>
 </table>

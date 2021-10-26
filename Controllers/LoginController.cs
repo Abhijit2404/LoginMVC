@@ -37,7 +37,8 @@ namespace LoginMVC.Controllers
         }
         public IActionResult Logout()
         {
-            HttpContext.Session.Clear();  
+            HttpContext.Session.Remove("Token");
+            HttpContext.Session.Clear();
             return RedirectToAction("Index","Login");
         }
     }

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using LoginMVC.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +35,7 @@ namespace LoginMVC.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            ModelState.AddModelError(string.Empty,"Server Error");
+            ModelState.AddModelError(string.Empty,"All Fields are Mandatory");
             return View(user);
         }
 
