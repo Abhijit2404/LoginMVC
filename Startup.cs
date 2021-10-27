@@ -20,15 +20,17 @@ namespace LoginMVC
         public void ConfigureServices(IServiceCollection services)
         {
             
-            services.AddControllersWithViews();
+            services.AddDistributedMemoryCache();
             services.AddSession(x =>
             {
                 x.Cookie.Name = "Phynd.Session";
-                x.IdleTimeout = TimeSpan.FromMinutes(2);
+                x.IdleTimeout = TimeSpan.FromMinutes(10);
                 x.Cookie.HttpOnly = true;
                 x.Cookie.IsEssential = true;
             });
 
+            services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,13 +50,13 @@ namespace LoginMVC
             app.UseStaticFiles();
 
             app.UseRouting();
-            
-            app.UseSession();
 
             app.UseCookiePolicy();  
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

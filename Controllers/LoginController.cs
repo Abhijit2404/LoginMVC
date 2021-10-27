@@ -38,6 +38,7 @@ namespace LoginMVC.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("Token");
+            HttpContext.Response.Cookies.Delete("Phynd.Session");
             HttpContext.Session.Clear();
             return RedirectToAction("Index","Login");
         }
