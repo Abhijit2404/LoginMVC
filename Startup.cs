@@ -51,6 +51,8 @@ namespace LoginMVC
             
             app.UseSession();
 
+            app.UseCookiePolicy();  
+
             app.UseAuthentication();
             app.UseAuthorization();
 

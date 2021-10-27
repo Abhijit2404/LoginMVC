@@ -4,11 +4,24 @@
     ViewData["Title"] = "Search";
 }
 
+<style>
+    .table{
+        border-collapse: collapse;  
+        border : 1px solid #c9c8c5;
+        text-align: center;
+        letter-spacing: .6px;    
+    }
+    tr:nth-child(even) {
+    background-color: #eee;
+    }
+
+</style>
+
 <center>
     @using (Html.BeginForm("Index", "User", FormMethod.Get))
     {
         <input type="text" name="search" />
-        <input type="submit" value="Search" name="submit" />
+        <input class="btn btn-dark mb-1" type="submit" value="Search" name="submit" />
     }
 </center>
 
@@ -49,7 +62,7 @@
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>
                     <td>
-                        @Html.ActionLink("Delete","Delete",new{Id = item.Id})
+                        <button class="btn btn-danger">@Html.ActionLink("Delete","Delete",new{Id = item.Id},new{Style = "color:White;text-decoration:none;"})</button>
                     </td>
                 </tr>
             }

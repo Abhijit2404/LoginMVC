@@ -1,30 +1,29 @@
-﻿@* @model LoginMVC.Models.Hospital *@
+﻿@model IEnumerable<LoginMVC.Models.Hospital>
 @{
     ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
-
-
-@* <div class="row">
-    @foreach (var item in Model)
+<div class="row">
+    @if(Model != null)
     {
-        <div class="col-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://static.toiimg.com/photo/imgsize-704065,msid-74034555/74034555.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
-                    <p class="card-text">@Html.DisplayFor(model => model.AddressLine1)</p>
-                    <p class="card-text">@Html.DisplayFor(model => model.AddressLine2)</p>
-                    <p class="card-text">@Html.DisplayFor(model => model.Zipcode)</p>
-                    <p class="card-text">@Html.DisplayFor(model => model.City)</p>
-                    <p class="card-text">@Html.DisplayFor(model => model.State)</p>
-                    <p class="card-text">@Html.DisplayFor(model => model.Country)</p>
+        @foreach (var item in Model)
+        {
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://static.toiimg.com/photo/imgsize-704065,msid-74034555/74034555.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">@item.Address</p>
+                        <p class="card-text">@item.Zipcode</p>
+                        <p class="card-text">@item.City</p>
+                        <p class="card-text">@item.State</p>
+                        <p class="card-text">@item.Country</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     }
-</div> *@
+    
+</div>
+
 
