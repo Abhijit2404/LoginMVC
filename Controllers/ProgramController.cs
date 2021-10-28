@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LoginMVC.Controllers
 {
+    [Authorize(Roles = "1,2")]
     public class ProgramController : Controller
     {
         public IActionResult Index()

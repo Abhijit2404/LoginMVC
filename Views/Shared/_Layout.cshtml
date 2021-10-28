@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Http;
 @using System.IdentityModel.Tokens.Jwt;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +23,22 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">ManageUsers</a>
+                            @if (HttpContextAccessor.HttpContext.Session.GetString("Role") == "1" || HttpContextAccessor.HttpContext.Session.GetString("Role") == "3")
+                            {
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">ManageUsers</a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Provider" asp-action="Index">ManageProviders</a>
+                            @if (HttpContextAccessor.HttpContext.Session.GetString("Role") == "1" || HttpContextAccessor.HttpContext.Session.GetString("Role") == "2")
+                            {
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Provider" asp-action="Index">ManageProviders</a>
+                            }
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Program" asp-action="Index">ManagePrograms</a>
+                            @if (HttpContextAccessor.HttpContext.Session.GetString("Role") == "1" || HttpContextAccessor.HttpContext.Session.GetString("Role") == "2")
+                            {
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Program" asp-action="Index">ManagePrograms</a>
+                            }
                         </li>
                     </ul>
                 </div>
@@ -41,7 +52,7 @@
                   
                 <div style="margin-right: 20px">Hello,  @getName</div>
 
-                <form asp-controller="Login" asp-action="Index" method="post">
+                <form asp-controller="Login" asp-action="Logout" method="post">
                     <button class="btn btn-outline-danger">Logout</button>
                 </form>
 

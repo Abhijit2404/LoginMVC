@@ -1,6 +1,8 @@
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,7 +21,13 @@ namespace LoginMVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(o =>
+            {
+                o.LoginPath = "/Login/LoginUser";
+            });
+
+            services.AddHttpClient();
             services.AddDistributedMemoryCache();
             services.AddSession(x =>
             {
@@ -30,6 +38,7 @@ namespace LoginMVC
             });
 
             services.AddControllersWithViews();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddRazorPages();
         }
 

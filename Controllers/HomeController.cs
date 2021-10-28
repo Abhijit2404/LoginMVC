@@ -5,13 +5,18 @@ using LoginMVC.Models;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LoginMVC.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("Token")==null) {
+                return RedirectToAction("Index", "Login");
+            }
             var accessToken = HttpContext.Session.GetString("Token");
             IEnumerable<Hospital> hospitals = null;
             using (var client = new HttpClient())
