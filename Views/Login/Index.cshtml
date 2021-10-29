@@ -12,45 +12,54 @@
     <style>
         *{
             font-family: monospace;
+            background-color: #c4c0c0;
         }
+
+        strong{
+            color : #c7433a;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        table{
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"],input[type="reset"]{
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
         #login-div {
             position: absolute;
             left: 40%;
-            top: 40%;
-            border: 1px solid #ccc;
-            padding: 10px 10px;
+            top: 30%;
+            border: 2px solid #7d7777;
+            border-radius: 5px;
+            box-shadow: inset 5px 5px 5px #919191, inset -5px -5px 5px #919191;
+            padding: 10px;
             font-size: 15px;
             text-align: center;
         }
 
-        .container{
-            padding-top: 10px;
-        }
-
-        .field-validation-error {
-            color: red;
-        }
     </style>
 </head>
 <body>
     <div id="login-div">
+
         @using (Html.BeginForm("LoginUser", "Login", FormMethod.Get))
         {
             <table>
+
                 <tr>
-                    <h2>LOGIN</h2>
+                    <h3>Phynd | LOGIN</h3>
                 </tr>
 
                 <tr>
-                    <td>
-                        @Html.LabelFor(model => model.Email)
-                    </td>
-                    <td>
-                        @Html.EditorFor(model => model.Email)
-                    </td>
+                    <td>@Html.LabelFor(model => model.Email)</td>
+                    <td>@Html.EditorFor(model => model.Email)</td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>@Html.ValidationMessageFor(model => model.Email)</td>
                 </tr>
 
@@ -59,23 +68,18 @@
                     <td>@Html.EditorFor(model => model.Password)</td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td>@Html.ValidationMessageFor(model => model.Password)</td>
                 </tr>
 
                 <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" name="name" value="Login" />
-                        <input type="reset" name="name" value="Clear" />
-                    </td>
+                    <strong>@TempData["Message"]</strong>
                 </tr>
 
-                <tr>
-                    <td>@ViewBag.Message</td>
-                </tr>
-                
             </table>
+
+            <input type="submit" name="name" value="Login" />
+            <input type="reset" name="name" value="Clear" />
+
         }
     </div>
 </body>

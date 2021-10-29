@@ -14,15 +14,12 @@ namespace LoginMVC.Controllers
     {
         public IActionResult Index()
         {
-            if (HttpContext.Session.GetString("Token")==null) {
-                return RedirectToAction("Index", "Login");
-            }
             var accessToken = HttpContext.Session.GetString("Token");
             IEnumerable<Hospital> hospitals = null;
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                client.BaseAddress = new Uri("https://localhost:5001");
+                client.BaseAddress = new Uri(Urls.AuthUrl);
                 var response = client.GetAsync("hospital");
                 response.Wait();
                 
