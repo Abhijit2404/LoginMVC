@@ -18,7 +18,6 @@ namespace LoginMVC.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public IActionResult Create(UserCreate user)
         {

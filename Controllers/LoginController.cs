@@ -40,11 +40,13 @@ namespace LoginMVC.Controllers
                 using (var response = await client.PostAsync(Urls.LoginUrl, sc))
                 {
                     string token = await response.Content.ReadAsStringAsync();
-                    if (token == "Invalid Credentials")
+                    
+                    if (token == "Invalid Credentials" || token == "Invalid")
                     {
                         TempData["Message"] = "Incorrect Email Or Password";
                         return RedirectToAction("Index","Login");
                     }
+
                     HttpContext.Session.SetString("Token", token);
 
                     try{

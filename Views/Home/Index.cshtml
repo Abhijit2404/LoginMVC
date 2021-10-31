@@ -3,13 +3,21 @@
     ViewData["Title"] = "Home";
 }
 
+<style>
+    .col-4{
+        display:flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+</style>
+
 <div class="row">
     @if(Model != null)
     {
         @foreach (var item in Model)
         {
             <div class="col-4">
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 20rem;">
                     <img class="card-img-top" src="https://static.toiimg.com/photo/imgsize-704065,msid-74034555/74034555.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">@item.Name</h5>

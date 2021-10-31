@@ -55,6 +55,16 @@ namespace LoginMVC
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            
+            app.UseStatusCodePages(async context =>
+            {
+                context.HttpContext.Response.ContentType = "text/plain";
+
+                await context.HttpContext.Response.WriteAsync(
+                    "You are Unauthorize to access this page " +
+                    context.HttpContext.Response.StatusCode);
+            });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
