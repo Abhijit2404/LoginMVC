@@ -14,6 +14,7 @@ namespace LoginMVC.Controllers
     [Authorize(Roles = "1,3")]
     public class UserController : Controller
     {
+        string BaseUrl = Urls.AuthUrl;
         public IActionResult Create()
         {
             return View();
@@ -26,7 +27,7 @@ namespace LoginMVC.Controllers
             using(var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                client.BaseAddress = new Uri(Urls.AuthUrl);
+                client.BaseAddress = new Uri(BaseUrl);
                 var stringContent = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8,"application/json");
                 var postjob = client.PostAsync("users",stringContent);
 
@@ -46,7 +47,7 @@ namespace LoginMVC.Controllers
             {
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-                client.BaseAddress = new Uri(Urls.AuthUrl);
+                client.BaseAddress = new Uri(BaseUrl);
 
                 var deleteTask = client.DeleteAsync("users?Id=" + Id.ToString());
 
@@ -66,7 +67,7 @@ namespace LoginMVC.Controllers
             IEnumerable<User> obj = null;
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            client.BaseAddress = new Uri(Urls.AuthUrl);
+            client.BaseAddress = new Uri(BaseUrl);
 
             var apicall = client.GetAsync("users/func?Search=" + search);
 

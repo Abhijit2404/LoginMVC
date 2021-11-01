@@ -38,5 +38,10 @@ namespace LoginMVC.Controllers
                 return View(hospitals);
             }
         }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }

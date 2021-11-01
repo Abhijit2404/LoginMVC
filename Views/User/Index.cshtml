@@ -1,58 +1,95 @@
 @model IEnumerable<LoginMVC.Models.User>
-
 @{
-    ViewData["Title"] = "Search";
+    ViewData["Title"] = "Users";
 }
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
+    *{
+        font-family:"Roboto", sans-serif;
+    }
+    
     .table{
         border-collapse: collapse;  
         border : 1px solid #c9c8c5;
+        border-radius: 20px;
         text-align: center;
         letter-spacing: .6px;    
     }
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-right: 1px solid #c9c8c5;
+        text-align: center;
+        background-color: #04AA7D;
+        color: white;
+    }
 
     tr:nth-child(even) {
-    background-color: #eee;
+        background-color: #eee;
+    }
+
+    td{
+        border-right: 1px solid #c9c8c5;
+    }
+
+    form{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    input[type="search"]{
+        max-width: 30%;
+        margin-right: 20px;
     }
 
     input[type="text"]{
         margin-right: 15px;
     }
 
+    .notFound{
+        text-align:center; 
+        font-weight: bold;
+        font-style: italic;
+        margin-top:15%;
+    }
+
 </style>
 
-<center>
-    @using (Html.BeginForm("Index", "User", FormMethod.Get))
-    {
-        <input type="text" name="search" />
-        <input class="btn btn-dark mb-2" type="submit" value="Search" name="submit" />
-    }
-</center>
+@using (Html.BeginForm("Index", "User", FormMethod.Get))
 
-<p style="text-align:end">
-    <a class="btn btn-success" asp-action="Create">Create User</a>
-</p>
+{
+    <input class="form-control mr-sm-2" type="search" name="search"/>
+    <button class="btn btn-outline-dark" type="submit" value="Search" name="search">Search</button>
+}
+
+<div style="text-align:end; float:right; margin-bottom:25px;">
+    <a class="btn btn-success" asp-action="Create"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Create User</a>
+</div>
 
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                Action
-            </th>
-        </tr>
+        @if(Model.Count() > 0){
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        }
     </thead>
     <tbody>
-         @if(Model != null)
+         @if(Model.Count() > 0)
          {
              @foreach (var item in Model)
             {
@@ -71,6 +108,8 @@
                     </td>
                 </tr>
             }
+         }else{
+            <div class="notFound">No records found.</div>
          }
     </tbody>
 </table>
