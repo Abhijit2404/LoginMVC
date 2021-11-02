@@ -16,6 +16,20 @@
         body{
             background-color: #f2f8f9;
         }
+        
+        #link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width .3s;
+        }
+
+        #link:hover::after {
+            width: 100%;
+            transition: width .3s;
+        }
     </style>
 </head>
 <body>
@@ -30,13 +44,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Index">ManageUsers</a>
+                            <a id="link" class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Index">ManageUsers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Provider" asp-action="Index">ManageProviders</a>
+                            <a id="link" class="nav-link text-light" asp-area="" asp-controller="Provider" asp-action="Index">ManageProviders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Program" asp-action="Index">ManagePrograms</a>
+                            <a id="link" class="nav-link text-light" asp-area="" asp-controller="Program" asp-action="Index">ManagePrograms</a>
                         </li>
                     </ul>
                 </div>

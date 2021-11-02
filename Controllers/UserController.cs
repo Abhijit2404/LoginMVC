@@ -36,7 +36,6 @@ namespace LoginMVC.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            ModelState.AddModelError(string.Empty,"All Fields are Mandatory");
             return View(user);
         }
 

@@ -13,10 +13,10 @@
     .table{
         border-collapse: collapse;  
         border : 1px solid #c9c8c5;
-        border-radius: 20px;
         text-align: center;
         letter-spacing: .6px;    
     }
+
     th {
         padding-top: 12px;
         padding-bottom: 12px;
@@ -24,10 +24,11 @@
         text-align: center;
         background-color: #04AA7D;
         color: white;
+        font-family: "Roboto", sans-serif;
     }
 
     tr:nth-child(even) {
-        background-color: #eee;
+        background-color: #f2f4f5;
     }
 
     td{
@@ -40,6 +41,7 @@
         align-items: center;
         text-align: center;
     }
+
     input[type="search"]{
         max-width: 30%;
         margin-right: 20px;
@@ -61,12 +63,12 @@
 @using (Html.BeginForm("Index", "User", FormMethod.Get))
 
 {
-    <input class="form-control mr-sm-2" type="search" name="search"/>
+    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Find by Name"/>
     <button class="btn btn-outline-dark" type="submit" value="Search" name="search">Search</button>
 }
 
 <div style="text-align:end; float:right; margin-bottom:25px;">
-    <a class="btn btn-success" asp-action="Create"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Create User</a>
+    <a class="btn btn-success" asp-action="Create"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Add User</a>
 </div>
 
 <table class="table">
