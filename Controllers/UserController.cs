@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -32,8 +33,15 @@ namespace LoginMVC.Controllers
                 var postjob = client.PostAsync("users",stringContent);
 
                 var result = postjob.Result;
+                
                 if(result.IsSuccessStatusCode){
                     return RedirectToAction("Index");
+                }
+
+                if(result.StatusCode == HttpStatusCode.Conflict){
+                    ModelState.Clear();
+                    TempData["Error"] = "Email Already Exists";
+                    return View("Create");
                 }
             }
             return View(user);

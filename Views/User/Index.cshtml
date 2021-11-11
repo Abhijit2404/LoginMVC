@@ -23,7 +23,6 @@
         border-right: 1px solid #c9c8c5;
         text-align: center;
         background-color: #04AA7D;
-        color: white;
         font-family: "Roboto", sans-serif;
     }
 
@@ -43,8 +42,9 @@
     }
 
     input[type="search"]{
-        max-width: 30%;
-        margin-right: 20px;
+        margin-top: 20px;
+        max-width: 25%;
+        margin-bottom: 25px;
     }
 
     input[type="text"]{
@@ -64,10 +64,10 @@
 
 {
     <input class="form-control mr-sm-2" type="search" name="search" placeholder="Find by Name"/>
-    <button class="btn btn-outline-dark" type="submit" value="Search" name="search">Search</button>
+    <button style="margin-top: 20px;margin-bottom: 25px;margin-left: 12px;" class="btn btn-outline-dark" type="submit" value="Search">Search</button>
 }
 
-<div style="text-align:end; float:right; margin-bottom:25px;">
+<div style="text-align:end; float:right; margin-bottom:15px; margin-top:25px;">
     <a class="btn btn-success" asp-action="Create"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Add User</a>
 </div>
 
